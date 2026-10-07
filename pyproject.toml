@@ -1,0 +1,10 @@
+[project]
+name = "freight-rate"
+version = "1.0.0"
+description = "Freight rate prediction - Spotter ML Engineer assessment"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "tests"]
+testpaths = ["tests"]
+markers = ["integration: checks on the generated submission files (run the pipeline first)"]

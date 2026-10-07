@@ -1,0 +1,45 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.0, pytest-9.1.1, pluggy-1.6.0 -- D:\Assessment\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Assessment
+configfile: pyproject.toml
+testpaths: tests
+collecting ... collected 35 items
+
+tests/test_data.py::test_daily_context_is_per_date_mean PASSED           [  2%]
+tests/test_data.py::test_clean_features_fixes_weight_and_market_index PASSED [  5%]
+tests/test_data.py::test_clean_features_leaves_input_and_labels_untouched PASSED [  8%]
+tests/test_data.py::test_city_coordinates_lookup PASSED                  [ 11%]
+tests/test_data.py::test_december_chart_frame_fills_missing_inputs PASSED [ 14%]
+tests/test_data.py::test_december_chart_frame_rejects_unknown_city PASSED [ 17%]
+tests/test_features.py::test_haversine_one_degree_of_latitude PASSED     [ 20%]
+tests/test_features.py::test_days_to_quarter_end[2025-03-31-0] PASSED    [ 22%]
+tests/test_features.py::test_days_to_quarter_end[2025-03-01-30] PASSED   [ 25%]
+tests/test_features.py::test_days_to_quarter_end[2025-04-01-90] PASSED   [ 28%]
+tests/test_features.py::test_days_to_quarter_end[2025-12-31-0] PASSED    [ 31%]
+tests/test_features.py::test_days_to_quarter_end[2025-12-01-30] PASSED   [ 34%]
+tests/test_features.py::test_days_to_quarter_end[2025-10-01-91] PASSED   [ 37%]
+tests/test_features.py::test_build_features_produces_complete_model_inputs PASSED [ 40%]
+tests/test_features.py::test_build_features_rejects_unknown_equipment PASSED [ 42%]
+tests/test_model.py::test_fit_predict_contract PASSED                    [ 45%]
+tests/test_model.py::test_linear_stage_recovers_true_trend PASSED        [ 48%]
+tests/test_model.py::test_trend_is_extrapolated_where_trees_alone_fall_flat PASSED [ 51%]
+tests/test_model.py::test_label_outlier_filter_protects_the_fit PASSED   [ 54%]
+tests/test_model.py::test_predictions_handle_dirty_feature_rows PASSED   [ 57%]
+tests/test_outliers.py::test_corrupted_labels_are_recovered PASSED       [ 60%]
+tests/test_outliers.py::test_clean_data_is_not_flagged PASSED            [ 62%]
+tests/test_pipeline.py::test_fill_validation_template_keeps_template_order PASSED [ 65%]
+tests/test_pipeline.py::test_fill_validation_template_rejects_missing_ids PASSED [ 68%]
+tests/test_pipeline.py::test_submission_passes_official_validator PASSED [ 71%]
+tests/test_pipeline.py::test_submission_matches_validation_loads PASSED  [ 74%]
+tests/test_pipeline.py::test_submission_values_are_plausible PASSED      [ 77%]
+tests/test_pipeline.py::test_december_passes_official_validator PASSED   [ 80%]
+tests/test_pipeline.py::test_backtest_meets_accuracy_bar PASSED          [ 82%]
+tests/test_pipeline.py::test_score_script_end_to_end PASSED              [ 85%]
+tests/test_validation.py::test_rolling_origin_folds_match_two_month_horizon PASSED [ 88%]
+tests/test_validation.py::test_folds_never_train_on_the_future PASSED    [ 91%]
+tests/test_validation.py::test_rolling_origin_folds_require_history PASSED [ 94%]
+tests/test_validation.py::test_regression_metrics_known_values PASSED    [ 97%]
+tests/test_validation.py::test_plausible_label_mask PASSED               [100%]
+
+============================= 35 passed in 40.65s =============================

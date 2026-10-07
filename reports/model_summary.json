@@ -1,0 +1,37 @@
+{
+  "training_rows_used": 47323,
+  "label_outliers_removed": 677,
+  "trend_pct_per_year": 7.5403545201818245,
+  "quarter_end_peak_uplift_pct": 4.085857934178971,
+  "market_index_elasticity": 0.15289764770459044,
+  "linear_coefficients": {
+    "days_since_origin": 0.000199,
+    "quarter_end_ramp": 0.040046,
+    "log_market_index": 0.152898,
+    "log_distance": 0.871155,
+    "log_weight": 0.08092,
+    "log_quote_signal": 0.00571,
+    "equipment_Flatbed": 0.079845,
+    "equipment_Reefer": 0.121293
+  },
+  "gbm_gain_importance": {
+    "pickup_lat": 0.1905,
+    "delivery_lat": 0.1643,
+    "delivery_lon": 0.1278,
+    "pickup_lon": 0.117,
+    "weight": 0.0749,
+    "quote_signal": 0.0671,
+    "great_circle_miles": 0.065,
+    "delta_lat": 0.0418,
+    "distance": 0.0307,
+    "quote_signal_day": 0.0285,
+    "delta_lon": 0.0244,
+    "equipment": 0.0221,
+    "days_to_quarter_end": 0.0193,
+    "market_index": 0.0134,
+    "log_distance": 0.0072,
+    "circuity": 0.0035,
+    "day_of_week": 0.0025,
+    "weight_missing": 0.0002
+  }
+}

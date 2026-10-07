@@ -1,0 +1,57 @@
+Loaded 48,000 development loads (2025-01-01 to 2025-10-31)
+Loaded 12,000 validation loads (2025-11-01 to 2025-12-31)
+
+Rolling-origin backtest (train on all prior months, test on the next two):
+  backtested 'final model' in 31s
+  backtested 'linear model only' in 13s
+  backtested 'GBM with date feature (no linear trend)' in 28s
+  backtested 'final model without label-outlier filter' in 13s
+                                   model    fold subset    n     mae    rmse  mape_pct  median_ape_pct  bias_pct
+                             final model May-Jun    all 9696  85.028 626.051     3.566           1.107     0.350
+                             final model May-Jun  clean 9571  31.176  45.410     1.267           1.090     0.350
+                             final model Jul-Aug    all 9671 115.640 621.192     4.871           1.990     1.459
+                             final model Jul-Aug  clean 9538  63.964 101.011     2.585           1.952     1.460
+                             final model Sep-Oct    all 9523  84.284 628.211     3.765           1.063    -0.079
+                             final model Sep-Oct  clean 9379  28.083  39.911     1.229           1.047    -0.078
+                       linear model only May-Jun    all 9696 112.585 631.380     4.975           2.333    -0.507
+                       linear model only May-Jun  clean 9571  59.026  79.966     2.709           2.288    -0.506
+                       linear model only Jul-Aug    all 9671 115.157 622.191     5.309           2.485     1.456
+                       linear model only Jul-Aug  clean 9538  63.266  85.239     3.008           2.446     1.459
+                       linear model only Sep-Oct    all 9523 114.934 634.056     5.287           2.406    -0.705
+                       linear model only Sep-Oct  clean 9379  59.088  80.862     2.773           2.359    -0.704
+ GBM with date feature (no linear trend) May-Jun    all 9696  96.492 628.941     4.064           1.505    -1.010
+ GBM with date feature (no linear trend) May-Jun  clean 9571  42.765  62.769     1.795           1.482    -1.009
+ GBM with date feature (no linear trend) Jul-Aug    all 9671  97.573 621.482     4.534           1.665    -1.250
+ GBM with date feature (no linear trend) Jul-Aug  clean 9538  45.556  62.913     2.317           1.638    -1.247
+ GBM with date feature (no linear trend) Sep-Oct    all 9523  97.705 632.089     4.188           1.489    -1.130
+ GBM with date feature (no linear trend) Sep-Oct  clean 9379  41.672  61.413     1.682           1.461    -1.130
+final model without label-outlier filter May-Jun    all 9696 140.727 639.382     6.225           3.066     0.241
+final model without label-outlier filter May-Jun  clean 9571  87.595 131.006     3.970           3.017     0.242
+final model without label-outlier filter Jul-Aug    all 9671 132.007 626.456     5.755           2.835     1.746
+final model without label-outlier filter Jul-Aug  clean 9538  80.374 119.873     3.464           2.793     1.748
+final model without label-outlier filter Sep-Oct    all 9523 124.644 634.286     5.537           2.470     0.343
+final model without label-outlier filter Sep-Oct  clean 9379  69.096 103.185     3.007           2.433     0.344
+
+Mean over folds:
+                                                    mae    rmse  mape_pct  median_ape_pct  bias_pct
+model                                    subset                                                    
+final model                              all     94.984 625.151     4.067           1.386     0.577
+                                         clean   41.074  62.111     1.694           1.363     0.577
+linear model only                        all    114.225 629.209     5.190           2.408     0.081
+                                         clean   60.460  82.022     2.830           2.364     0.083
+GBM with date feature (no linear trend)  all     97.256 627.504     4.262           1.553    -1.130
+                                         clean   43.331  62.365     1.931           1.527    -1.129
+final model without label-outlier filter all    132.459 633.375     5.839           2.791     0.777
+                                         clean   79.022 118.021     3.480           2.748     0.778
+
+Unseen-city check (8 cities removed from training, last fold):
+   fold       lanes    n    mae   rmse  mape_pct  median_ape_pct  bias_pct
+Sep-Oct unseen city 2477 30.603 44.850     1.291           1.070    -0.192
+Sep-Oct seen cities 6902 27.843 39.628     1.232           1.048    -0.168
+
+Training final model on all development data...
+  removed 677 corrupted labels, trained on 47,323 loads
+  learned trend: +7.5%/year; quarter-end peak uplift: +4.1%
+
+Wrote 12,000 predictions to validation_predictions.csv
+Filled 31 December chart rows in data\december_chart_inputs.csv (range $827.74 - $858.31)

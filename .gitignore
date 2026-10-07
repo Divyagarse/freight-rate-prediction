@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Assessment inputs: not redistributed in this public repo (see README "Data")
+data/train_test.csv
+data/validation.csv
+data/validation_predictions_template.csv
+freight-rate-ml-assessment.pdf
